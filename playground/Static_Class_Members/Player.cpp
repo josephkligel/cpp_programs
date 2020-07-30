@@ -4,12 +4,12 @@ int Player::num_players {0};
 
 Player::Player(std::string n, int h, int x)
     :name{n}, health{h}, exp{x}
-{}
+{
+    ++num_players;
+}
 
 Player::Player(const Player &source)
-    :Player(source.name, source.health, source.exp){
-        ++num_players;
-    }
+    :Player(source.name, source.health, source.exp){}
 
 Player::~Player(){
     --num_players;
