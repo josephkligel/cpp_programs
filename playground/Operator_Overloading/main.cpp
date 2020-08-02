@@ -11,10 +11,14 @@ int main(){
     // larry.display();
     // stooges.display();
 
+    // Mystring a {"Hello"};
+    // Mystring b;
+    // b = a;
+    // b = "This is a test";
+
     Mystring a {"Hello"};
-    Mystring b;
-    b = a;
-    b = "This is a test";
+    a = Mystring{"Hola"};
+    a = "Bonjour";
 
     return 0;
 }
