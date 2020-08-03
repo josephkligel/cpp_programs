@@ -22,6 +22,9 @@ class Mystring{
         Mystring &operator=(const Mystring &rhs); // Copy assignment
         Mystring &operator=(Mystring &&rhs); // Move assignment
 
+        Mystring operator-() const;
+        Mystring operator+(const Mystring &rhs) const;
+        bool operator==(const Mystring &rhs) const;
 };
 
 #endif
