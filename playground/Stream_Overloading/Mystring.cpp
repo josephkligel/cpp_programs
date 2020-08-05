@@ -70,29 +70,16 @@ void Mystring::display() const
 int Mystring::get_length() const { return strlen(str); }
 const char *Mystring::get_str() const { return str; }
 
-
-// Equality
-bool operator==(const Mystring &lhs, const Mystring &rhs){
-    return (std::strcmp(lhs.str, rhs.str) == 0);
+// Stream Operators
+std::ostream &operator<<(std::ostream &os, const Mystring &rhs){
+    os << rhs.str;
+    return os;
 }
 
-// Make Lowercase
-Mystring operator-(const Mystring &obj){
-    char *buff = new char[std::strlen(obj.str) + 1];
-    std::strcpy(buff, obj.str);
-    for(size_t i{0}; i < std::strlen(buff); i++)
-        buff[i] = std::tolower(buff[i]);
-    Mystring temp {buff};
+std::istream &operator>>(std::istream &in, Mystring &rhs){
+    char *buff = new char[1000];
+    in >> buff;
+    rhs = Mystring {buff};
     delete [] buff;
-    return temp;
-}
-
-// Concatenation
-Mystring operator+(const Mystring &lhs, const Mystring &rhs){
-    char *buff = new char[std::strlen(lhs.str) + std::strlen(rhs.str) + 1];
-    std::strcpy(buff, lhs.str);
-    std::strcat(buff, rhs.str);
-    Mystring temp {buff};
-    delete [] buff;
-    return temp;
+    return in;
 }

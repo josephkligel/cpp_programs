@@ -17,12 +17,12 @@ int main() {
     std::cout << (larry == moe) << std::endl;
     std::cout << (larry == stooge) << std::endl;
 
-    Mystring stooges = "Larry";
+    Mystring stooges = "Larry" + moe;
     stooges.display();
 
     Mystring two_stooges = moe + " " + "Larry";
     two_stooges.display();
-    Mystring three_stooges = moe + larry + " " + "Curly";
+    Mystring three_stooges = moe + " " + larry + " " + "Curly";
     three_stooges.display();
 
     return 0;
