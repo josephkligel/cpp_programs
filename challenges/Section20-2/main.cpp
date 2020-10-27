@@ -108,8 +108,6 @@ int main() {
     std::list<Song>::iterator current_song = playlist.begin();
     
     char choice;
-    std::cin >> choice;
-    std::tolower(choice);
     while(choice != 'q'){
         display_menu();
         std::cin >> choice;
