@@ -15,8 +15,8 @@ class todolist
         auto get_list();
 
         void add_item(pair<string, vector<string>> item);
-        void remove_item(string);
-        void edit_item(string);
+        void remove_item(string item);
+        void edit_item(string item);
 
         friend ostream& operator<<(ostream &os, todolist &todo);
 

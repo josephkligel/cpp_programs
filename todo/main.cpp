@@ -13,8 +13,10 @@ int main()
     cout << todo << endl;
 
     pair<string, vector<string>> another_item("String", {"x", "y"});
-    //todo.set_todolist(another_item);
     todo.add_item(another_item);
-    cout << todo;
+    cout << todo << endl;
+
+    todo.remove_item("String");
+    cout << todo << endl;
     return 0;
 }
