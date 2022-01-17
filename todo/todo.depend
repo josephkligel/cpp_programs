@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1642308975 source:/home/josephk/Github/cpp_programs/todo/main.cpp
+	<iostream>
+	<utility>
+	<vector>
+	<string>
+	<todolist.h>
+
+1642308827 /home/josephk/Github/cpp_programs/todo/include/todolist.h
+	<map>
+	<string>
+	<vector>
+	<utility>
+
+1642308846 source:/home/josephk/Github/cpp_programs/todo/src/todolist.cpp
+	"todolist.h"
+	<iostream>
+	<utility>
+	<vector>
+	<string>
+
