@@ -4,7 +4,9 @@
 #include <string>
 #include <cstdio>
 #include <algorithm>
+#include "template.hpp"
 using namespace std;
+
 // Creates a template for standard cpp programs
 stringstream create_standard_cpp(){
 	stringstream str_stream("");
@@ -30,7 +32,7 @@ stringstream create_standard_header(const string &filename, string ext="_HPP"){
 	transform(copy.begin(), copy.end(), copy.begin(), ::toupper);
 
 	copy.insert(copy.length(), ext);
-	copy.insert(0, "__");
+	copy.insert(0, "_");
 
 	str_stream << "#ifndef " << copy << endl
 		<< "#define " << copy << endl
@@ -40,7 +42,7 @@ stringstream create_standard_header(const string &filename, string ext="_HPP"){
 	return str_stream;
 }
 // Create template based on the filename provided and the type of template file to be created
-int create_template(string filename, string type = "None"){
+void create_template(string filename, string type = "None"){
 	stringstream str_stream(""); 
 	
 	if(type == "header"){
@@ -56,15 +58,10 @@ int create_template(string filename, string type = "None"){
 		filename += ".cpp";
 	}
 
-	ofstream ofs(filename, ios::out);
+	string dir_name ("output/");
+
+	ofstream ofs(dir_name + filename, ios::out);
 
 	ofs << str_stream.str();
-
-	return 0;
 }
 
-int main(int argc, char **argv){
-	create_template(argv[1], argv[2]);
-	
-	return 0;
-}
