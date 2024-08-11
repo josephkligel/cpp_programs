@@ -3,11 +3,13 @@
 #include <string>
 
 using namespace std;
+namespace fs = filesystem;
 
 int main(int argc, char* argv[]){
-	string path = argv[1];
-
+	fs::path path = argv[1];
+	/*
 	for(const auto& entry: std::filesystem::directory_iterator(path)){
 		cout << entry << '\n';
 	}
+	*/
 }
